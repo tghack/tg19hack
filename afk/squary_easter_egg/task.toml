@@ -1,0 +1,8 @@
+[task]
+name = "EasterEgg1"
+shortname = "easteregg"
+hostname = ["laser"]
+
+[ports]
+tcp = [8083]
+udp = []
