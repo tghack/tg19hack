@@ -1,0 +1,16 @@
+{
+  "name": "object-ref",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "dependencies": {
+    "express": "^4.16.4",
+    "path": "^0.12.7"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "start": "node server.js"
+  },
+  "author": "maritio_o",
+  "license": "ISC"
+}
