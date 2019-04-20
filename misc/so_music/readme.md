@@ -19,6 +19,7 @@ Preamble: `1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 0 1 1 1 1 1 1 0 0 0 1 1 1 0 0
 Filter coefficients: `1 1 1 -1 -1 -1 1 1 1 -1 -1 -1 1 1 1 1 1 1 -1 -1 -1 -1 -1 -1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1`
 
 Library: [rtlsdr book library](uploads/rtlsdr_book_library.slx)
+(Credits: https://rintintin.colorado.edu/~gifford/5830/rtlsdr_book_library/)
 
 Msglen: 49
 </p></details>
