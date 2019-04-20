@@ -1,0 +1,10 @@
+{% extends "shop/main.html" %}
+
+{% block content %}
+    You ordered some cheapo wand. Maybe you should use the time-turner and try again?
+    <form action="/" method="post">
+        {% csrf_token %}
+        <input type="hidden" name="action" value="reset" />
+        <button type="submit">Go back to undo your mistake</button>
+    </form>
+{% endblock %}

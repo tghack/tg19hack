@@ -1,0 +1,41 @@
+{% extends "shop/main.html" %}
+
+{% block content %}
+    {% if error %}
+        <h1 style="color: red">{{ error }}</h1>
+    {% endif %}
+    <h1>Your credit: {{ coins }} coins</h1>
+    <h1>Shopping cart:</h1>
+    <ul>
+        {% for ci in cart %}
+            <li>{{ ci.sku }} - {{ ci.price }}</li>
+        {% endfor %}
+        <form action="/" method="post">
+            {% csrf_token %}
+            <input type="hidden" name="action" value="reset"/>
+            <button>Reset</button>
+        </form>
+        <form action="/" method="post">
+            {% csrf_token %}
+            <input type="hidden" name="action" value="order"/>
+            <button>Send order</button>
+        </form>
+    </ul>
+    <h1>Items</h1>
+    <div style="display: flex; flex-direction: row;">
+        {% for item in items %}
+            <div style="width: 10em; height: 10em; text-align: center; background-color: lightgray; margin: 0.5em;">
+                <strong>{{ item.name }}</strong><br/>
+                SKU: {{ item.sku }}<br/>
+                Price: {{ item.price }} coins
+                <form action="" method="post">
+                    {% csrf_token %}
+                    <input type="hidden" name="action" value="add_cart"/>
+                    <input type="hidden" name="sku" value="{{ item.sku }}"/>
+                    <input type="hidden" name="price" value="{{ item.price }}"/>
+                    <button type="submit">Add to cart</button>
+                </form>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}
