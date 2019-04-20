@@ -1,0 +1,5 @@
+.gdb_history
+.peda*
+*.swp
+*.swo
+*.o
