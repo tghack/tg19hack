@@ -1,0 +1,6 @@
+src/slprj
+src/*_grt_rtw
+*.mat
+*.m
+*.slxc
+*.autosave
