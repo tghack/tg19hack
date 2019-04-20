@@ -1,0 +1,12 @@
+- [ ] I have to buy a new wand, since it broke..
+  These are the wands I have looked at:
+  - Acacia wood and Unicorn hair core made by Peverell
+
+  - Aspen wood and Troll whisker core made by Quintana
+
+  - Maple wood and Horned Serpent horn core made by Ollivander
+
+- [x] Find a better location for `flag.txt`
+- [x] Do my Defence against the Dark Arts homework
+- [ ] Ask Lily to be my date at the school dance
+

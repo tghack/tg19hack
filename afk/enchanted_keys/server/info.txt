@@ -1,0 +1,4 @@
+Since this is an AFK task, we will have a computer at the TG:Hack stand with
+a keyboard with missing keys attached to it. The flag.txt file should just be
+put in either the home directory, or somewhere else to make it a bit harder.
+
