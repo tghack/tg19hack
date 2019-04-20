@@ -1,0 +1,23 @@
+diff --git a/src/d8.cc b/src/d8.cc
+index 5295f3957c..5697540be2 100644
+--- a/src/d8.cc
++++ b/src/d8.cc
+@@ -1127,9 +1127,8 @@ MaybeLocal<Context> Shell::CreateRealm(
+     }
+     delete[] old_realms;
+   }
+-  Local<ObjectTemplate> global_template = CreateGlobalTemplate(isolate);
+   Local<Context> context =
+-      Context::New(isolate, nullptr, global_template, global_object);
++	Context::New(isolate, nullptr, ObjectTemplate::New(isolate), v8::MaybeLocal<Value>());
+   DCHECK(!try_catch.HasCaught());
+   if (context.IsEmpty()) return MaybeLocal<Context>();
+   InitializeModuleEmbedderData(context);
+@@ -3605,6 +3604,7 @@ int Shell::Main(int argc, char* argv[]) {
+ 
+ #ifndef GOOGLE3
+ int main(int argc, char* argv[]) {
++  setvbuf(stdout, NULL, _IONBF, 0);
+   return v8::Shell::Main(argc, argv);
+ }
+ #endif

@@ -1,0 +1,17 @@
+diff --git a/src/compiler/effect-control-linearizer.cc b/src/compiler/effect-control-linearizer.cc
+index 97f78418d0..d3133abbe7 100644
+--- a/src/compiler/effect-control-linearizer.cc
++++ b/src/compiler/effect-control-linearizer.cc
+@@ -1426,12 +1426,6 @@ Node* EffectControlLinearizer::LowerTruncateTaggedToFloat64(Node* node) {
+ 
+ Node* EffectControlLinearizer::LowerCheckBounds(Node* node, Node* frame_state) {
+   Node* index = node->InputAt(0);
+-  Node* limit = node->InputAt(1);
+-  const CheckParameters& params = CheckParametersOf(node->op());
+-
+-  Node* check = __ Uint32LessThan(index, limit);
+-  __ DeoptimizeIfNot(DeoptimizeReason::kOutOfBounds, params.feedback(), check,
+-                     frame_state, IsSafetyCheck::kCriticalSafetyCheck);
+   return index;
+ }
+ 
