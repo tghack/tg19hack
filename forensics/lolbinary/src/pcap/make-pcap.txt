@@ -1,0 +1,3 @@
+#sniffles
+sniffles -b -c 800 -C 10 -p -300000 -T -v -a -h 172.19 -o gennoise.pcap &>/dev/null
+rm result.txt

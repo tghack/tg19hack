@@ -1,0 +1,20 @@
+worker_processes  1;
+
+events {
+    worker_connections  1024;
+}
+
+http {
+    server {
+      listen 80;
+      server_name notc2.tghack.no;
+      root         html;
+    
+      # redirect if 'xxx' is found on the user-agent string
+      if ( $http_user_agent != 'secretstringkey' ) {
+        return 404;
+      }
+    
+      location /get_flag { root /usr/share/nginx/html/; }
+    }
+}

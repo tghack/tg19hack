@@ -1,0 +1,32 @@
+No script was used to build this at the time, but you can follow these steps:
+
+compile `tghacklolpayload.cpp` to `tghacklolpayload.exe`
+
+next pack the binary with upx:
+
+```
+upx.exe -o packedpayload.exe tghacklolpayload.exe
+```
+
+make a copy:
+
+```
+cp packetpayload.exe packedpayloadmodified.exe
+```
+
+next replace `UPX0` and `UPX1` with `LOL0` and `LOL1` to confuse standard unpackers using a hex editor on the new copy of the file.
+
+then base64encode the binary and save to a file `olo`:
+```
+cat packedpayloadmodified.exe | base64encode > olo
+```
+
+next compile the other decoy binary `lol.cpp` to `lol.exe`.
+
+then use resource hacker to insert the `olo` file as a resource in the `lol.exe file`.
+
+now generate some network noise and capture it using etc wireshark, filter out arp, stp and other non-wanted noise.
+
+next capture a transfer of the lol.exe between two hosts and save as a nother pcap.
+
+run scapy script to auto inject the stream containing the binary into the noise.
