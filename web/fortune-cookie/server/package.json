@@ -1,0 +1,18 @@
+{
+  "name": "fortune-cookie",
+  "version": "1.0.0",
+  "description": "TG:Hack Fortune Cookie web task",
+  "main": "server.js",
+  "dependencies": {
+    "express": "^4.16.2"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "babel-node server.js"
+  },
+  "author": "maritio_o",
+  "license": "MIT"
+}

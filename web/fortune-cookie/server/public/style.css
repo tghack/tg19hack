@@ -1,0 +1,37 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto:300);
+
+body {
+	font-family: "Roboto", sans-serif;
+	margin: auto;
+	width: 50%
+}
+
+h1 {
+	color: #17a0c7;
+}
+
+p {
+	color: #e25c74;
+	margin: 35px 0px 35px 0px;
+}
+
+img {
+	width:40%;
+	display: block;
+	margin-top: 80px;
+	animation: myanimation 5s;
+	animation-iteration-count: infinite;
+	position: relative;
+}
+
+@keyframes myanimation
+{
+	0% {transform: rotate(0deg);left:0px;}
+	25% {transform: rotate(20deg);left:0px;}
+	50% {transform: rotate(0deg);left:100px;}
+	55% {transform: rotate(0deg);left:100px;}
+	70% {transform: rotate(-20deg);left:100px;background:#1ec7e6;}
+	100% {transform: rotate(0deg);left:0px;}
+}
+
+
