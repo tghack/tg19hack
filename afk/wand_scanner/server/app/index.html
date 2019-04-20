@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Wand scanner</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<script src="index.js" type="module"></script>
+</head>
+
+<body>
+	<aside>
+		<h4>City's best wands</h4>
+		<img src="images/wand1.png" alt="wand" width="150px" />
+		<img src="images/wand2.png" alt="wand" width="150px" />
+		<img src="images/wand3.png" alt="wand" width="150px" />
+	</aside>
+
+	<section class="container">
+		<h1>Get your wand info!</h1>
+		<div class="over-table">
+			<p>Scan your wand to get the price and information.</p>
+			<div>
+				<p id="refreshText" class="refresh-text">Refresh page:</p>
+				<img src="images/clrtbl.png" class="barcode" id="clearTableBarcode" onclick="clearTable()" />
+			</div>
+		</div>
+		<p id="messageBox"></p>
+		<table id="wandTable">
+			<tr>
+				<th>ID</th>
+				<th>Name</th>
+				<th>Description</th>
+			</tr>
+			<tr>
+				<td>f9f90ce4</td>
+				<td>Hawthorn</td>
+				<td>The wandmaker Gregorovitch wrote that hawthorn ‘makes a strange, contradictory wand, as full of
+					paradoxes as the tree that gave it birth, whose leaves and blossoms heal, and yet whose cut branches
+					smell of death.’ While I disagree with many of Gregorovitch’s conclusions, we concur about hawthorn
+					wands, which are complex and intriguing in their natures, just like the owners who best suit them.
+					Hawthorn wands may be particularly suited to healing magic, but they are also adept at curses, and I
+					have generally observed that the hawthorn wand seems most at home with a conflicted nature, or with
+					a witch or wizard passing through a period of turmoil. Hawthorn is not easy to master, however, and
+					I would only ever consider placing a hawthorn wand in the hands of a witch or wizard of proven
+					talent, or the consequences might be dangerous. Hawthorn wands have a notable peculiarity: their
+					spells can, when badly handled, backfire.</td>
+			</tr>
+		</table>
+	</section>
+
+	<aside>
+		<h4>City's best wands</h4>
+		<img src="images/wand4.png" alt="wand" width="150px" />
+		<img src="images/wand5.png" alt="wand" width="150px" />
+		<img src="images/wand6.png" alt="wand" width="150px" />
+	</aside>
+</body>
+
+</html>

@@ -1,0 +1,26 @@
+{
+  "name": "wand-shop",
+  "version": "1.0.0",
+  "description": "TG:Hack wand shop for eager wizardry witchcraft students.",
+  "main": "index.js",
+  "scripts": {
+    "build": "webpack --mode production --config webpack.config.js",
+    "start": "npm run webpack",
+    "webpack": "webpack -d --watch",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "maritio_o",
+  "license": "ISC",
+  "dependencies": {
+    "barcode-scanner": "0.0.1",
+    "body-parser": "^1.18.3",
+    "express": "^4.16.4",
+    "node-pre-gyp": "^0.12.0",
+    "sqlite3": "^4.0.6",
+    "usb-barcode-scanner": "^1.0.2",
+    "webpack": "^4.29.6"
+  },
+  "devDependencies": {
+    "webpack-cli": "^3.3.0"
+  }
+}

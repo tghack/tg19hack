@@ -1,0 +1,77 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto:300);
+
+html, body {
+	height: 100%;
+	margin: 0;
+}
+
+html {
+	background: linear-gradient(to bottom right, #088778, #4e5b98, #a624c1) no-repeat center center fixed;
+	background-size: cover;
+}
+
+body {
+	font-family: "Roboto", sans-serif;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	color: white;
+}
+
+.container {
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	min-width: 50%;
+	max-width: 55%;
+	padding-top: 20px;
+}
+
+aside{
+	background: white;
+	color: black;
+	text-align: top;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	margin: 20px;
+	padding: 10px 10px 40px 10px;
+	border-color: black;
+	border-style: solid;
+	border-width: 2px;
+}
+
+.barcode {
+	border-color: palevioletred;
+	border-style: solid;
+	border-width: 2px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 16px;
+	border-radius: 4px;
+	background-color: white;
+	color: purple;
+	height: 70px;
+}
+
+.over-table {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	margin-bottom: 70px;
+}
+
+.refresh-text {
+	margin: 0;
+	font-size: 12px;
+}
+
+table, th, td {
+  border: 1px solid #27b051;
+}
+
+td {
+	max-width: 80%;
+	padding: 10px;
+}
