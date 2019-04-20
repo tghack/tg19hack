@@ -1,0 +1,17 @@
+diff --git a/vl.c b/vl.c
+index 5ba06adf78..549c9af88a 100644
+--- a/vl.c
++++ b/vl.c
+@@ -4644,6 +4644,12 @@ int main(int argc, char **argv, char **envp)
+     accel_setup_post(current_machine);
+     os_setup_post();
+ 
++    /*
++     * TGHack patch
++     */
++    const char *flag = "TG19{tiny_raspberry_pi_kernels_everywhere}\r\n";
++    cpu_physical_memory_write(0x1337, (uint8_t *)flag, strlen(flag));
++
+     main_loop();
+ 
+     gdbserver_cleanup();
