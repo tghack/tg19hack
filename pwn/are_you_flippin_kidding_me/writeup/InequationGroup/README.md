@@ -8,4 +8,4 @@ Are you Flipping Kidding me was a hard pwn exercise, where one was given a write
 End TLDR;
 
 [Full Writeup](https://blog.inequationgroup.com/tghackflipping/)
-* [exploit](./Solve.py)
+[exploit](./Solve.py)
