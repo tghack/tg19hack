@@ -1,6 +1,6 @@
 # Writeup [Counter Play](README.md)
 
-**Points: 200**
+**Points: 300**
 
 **Author: zup**
 
@@ -12,7 +12,7 @@
 
 Let's connect to the service to see what all the fuzz is about...
 
-`nc counterplay.tghack.no 2018`
+`nc counter.tghack.no 2018`
 
 When connected, I get the following text back:
 
@@ -39,6 +39,8 @@ N/k/ncN{xN=^/G=l3yLCw>}FnY72,KX5-:7<_2[W\T5!-'3LUF<w<h)HC1'(3"__V(1Z3LU1u(?<]"*!
 As the task states, the text consists of ASCII characters, but it just looks like random data. 
 If I try to connect one more time, the text is totally different... 
 Let's put the obfuscated text in a file called `obfuscated.txt` for now.
+
+### Statistics
 
 How can we find out what the true meaning behind this ASCII text is? 
 Maybe a script that fetches the ASCII data multiple times can help us on our way.
@@ -138,17 +140,82 @@ Some positions use a longer set of characters while other positions uses a short
 
 **Set 2**: `!^*()_-=+]}[{'"\?/.>,<;:12357CEFGHIJKLMNSTUVWXYZcfhijklmnrstuvwxyz`
 
-Okay, so we got this far! But what is the difference between the characters in each set?
+Okay, so we got this far! But what is the difference between the characters in each set? There are several ways to solve this challenge. 
 
-There is a typography term called __Counter__. 
+1. Run statistics of the messages to find the different two character sets.
+2. Either go
+    - the _character printing_ path, or
+    - the _typography_ path:
+        - Then solve using GIF creator, or
+        - solve using image editor.
+
+Let's start with the _character printing_ path!
+
+### Character printing
+
+We now know that there are two sets of characters. Since this is ASCII text, 
+we can try printing something whenever we encounter characters from _Set 1_, since it contains less characters.
+Here is a Python script that outputs the character if it's in _Set 1_, and a space for characters in _Set 2_:
+
+```python
+#!/usr/bin/env python
+import sys
+from pwn import *
+
+REMOTE = True
+suspicious_chars = '# & 0 4 6 9 8 A B D O Q P R a b e d g o q p'.split(' ')
+
+if REMOTE:
+    r = remote('counter.tghack.no', 2018)
+    _ = r.recvuntil("text:\n\n")
+    text = r.recvall()
+    r.close()
+else:
+    with open('flag.enc', 'r') as f:
+        text = f.read()
+
+for ch in text:
+    if ch == '\n':
+        sys.stdout.write('\n')
+    elif ch in suspicious_chars:
+        sys.stdout.write(ch)
+    else:
+        sys.stdout.write(' ')
+```
+
+Running this script gives us the flag!
+
+```                                                                                                                                              
+                          &g                                                                                                             6P   
+g&BqD   Bao    q   9Qd   0   a 6d    aQR                 Qae    dPp&  pd        B    P       66#        d             &q    4P&    QaBQ    R  
+  Q    6   4  eq  9   D  #   89  4  P   Q  D         9  0   0  9    p  6        D    q      O   e       0       bpR    e   g   q  8        P  
+  d   B        0  &   D   B  g     P     a  D       g  A     &      Q  8       g0Pp  &     8     d      9      p   D   b  A     0 b       b   
+  p   Q  #8q   &   8p68 6q   4     p ##ogg   0     #   8 ea#bq  Oe# d  4        q    B #d  o ggaD0      a Dg  a     d  6  a ogpg&  8P8a    p6 
+  e   P    O8  6      8   9  B     q          a   Q    q       9   6D  P        B    B&  9 8            ba  p A     9  e  p            4  d   
+  8    e   #p  R      d  &   q      #   4      o O      D   p  8   64  8        D    &   g  A   9       4   4  d   Q   g   O   R       o   b  
+  d     0QO g gQP  a0A   8   O       o&8        e        6&&    gPq 6  b0 94p0  8bp  O   a   4oA   b4Bd a   p   oDo    a4   9dD    48dq    Q  
+                          dd                                                                                                             Oa   
+                                                                                                                                              
+```
+Flag: `TG19{reveal_the_holes}`
+
+This is probably the easiest method to solve this challenge, and it makes most sense.
+However, if you found the _Typography_ path, well done!
+
+
+### Typography
+
+The task name is __counter__, and if we look this up on the internet, we find out that 
+there is a typography term called __Counter__. 
 
 > In [typography](https://en.wikipedia.org/wiki/Typography), a **counter** is the 
 [area of a letter](https://en.wikipedia.org/wiki/Typeface_anatomy) that is entirely or 
-partially enclosed by a letter form or a symbol.
+partially enclosed by a letter form or a symbol. This also explains the mentioning of "holes" as a 
+hint in the task description... The counters are basically the holes inside of the characters.
 
 Check out __counter__ on [Wikipedia](<https://en.wikipedia.org/wiki/Counter_(typography)>) for more info.
 
-All of the characters in set 1 have enclosed areas inside of them, while the characters in set 2 does not.
+All of the characters in _Set 1_ have enclosed areas inside of them, while the characters in _Set 2_ does not.
 
 Maybe there is a message hidden in the counters of the characters? Let's try filling all of the counters 
 with a different color to see if there is anything hidden there!
@@ -173,9 +240,9 @@ _Waving wand_, __Revelio__! I got the flag!
 TG19{reveal_the_holes}
 ```
 
+### Gimp
 
-
-Another way to solve this challenge is to convert the text file to an image and edit it in Gimp or Photoshop.
+Finally, a third way to solve this challenge is to convert the text file to an image and edit it in Gimp or Photoshop.
 
 1. Open the image in Gimp:
 
@@ -190,6 +257,8 @@ Another way to solve this challenge is to convert the text file to an image and 
 ![Gimp3](img/gimp3.png)
 
 __Revelio__!
+
+
 
 There are also other ways to solve this challenge that I won't explain any further:
 
