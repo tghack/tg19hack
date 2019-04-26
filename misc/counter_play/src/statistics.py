@@ -1,11 +1,16 @@
 #!/usr/bin/env python
 from pwn import *
 
+LOCAL = False
+
 chmap = {}
 
 for x in range(300):
     line = 0
-    r = remote('localhost', 2018)
+    if LOCAL:
+        r = remote('localhost', 2018)
+    else:
+        r = remote('counter.tghack.no', 2018)
     _ = r.recvuntil("text:\n\n")
     data = r.recvall()
     
@@ -34,6 +39,6 @@ with open('statistics.txt', 'a') as f:
         for pos in chmap[line]:
             v = []
             for ch in chmap[line][pos]:
-                v.append("%s" % (ch)) # chmap[line][pos][ch]))
+                v.append("%s" % (ch))
             log.info("Line[%s] Pos[%s]: %s" % (line+1, pos+1, ' '.join(v)))
             f.write(("Line[%s] Pos[%s]: %s\n" % (line+1, pos+1, ' '.join(v))))
