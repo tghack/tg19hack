@@ -1,5 +1,5 @@
 # Counter Play
-**Points: 200**
+**Points: 300**
 
 **Author: zup**
 
@@ -22,6 +22,8 @@ this hole? You can find the mysterious source at:
 `nc counter.tghack.no 2018`
 
 <details><summary>Tip</summary>
-This is not a typical crypto challenge, but rather finding hidden data somewhere.
-The owls have nothing to do with the challenge, but are here to make things more magical.
+
+- This is not a typical crypto challenge, but rather finding hidden data somewhere.
+- The owls have nothing to do with the challenge, but are here to make things more magical.
+- Creating statistics by using the service multiple times, is a tip that will help you on your way!
 </details>
