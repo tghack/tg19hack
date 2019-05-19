@@ -218,6 +218,6 @@ For a list of more useful 3D printer software check out
 We first rename our STL file to `strange_file.stl` and open it in FreeCAD. 
 After rotating the figure we can see that it's a 3D figure of a flag!
 
-![Flag](flag.png)
+![Flag](src/flag.png)
 
 **Flag**: `TG19{3D_printing_started_in_the_80s}`
