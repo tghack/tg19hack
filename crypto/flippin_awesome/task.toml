@@ -1,0 +1,8 @@
+[task]
+name = "Flippin' awesome"
+shortname = "awesome"
+hostname = ["awesome"]
+
+[ports]
+tcp = [5000]
+udp = []

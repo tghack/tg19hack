@@ -1,0 +1,9 @@
+[task]
+name = "Baby's First JavaScript Engine Exploitation"
+shortname = "js"
+hostname = ["js"]
+use_xinetd = true
+
+[ports]
+tcp = [9001]
+udp = []
