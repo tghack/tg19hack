@@ -1,0 +1,8 @@
+[task]
+name = "lolbinary"
+shortname = "lolbinary"
+hostname = ["notc2"]
+
+[ports]
+tcp = [80]
+udp = []

@@ -1,0 +1,8 @@
+[task]
+name = "Are You Flipping Me?"
+shortname = "flip"
+hostname = ["flip"]
+
+[ports]
+tcp = [1947]
+udp = []

@@ -1,0 +1,9 @@
+[task]
+name = "Piece of Pi"
+shortname = "pi"
+hostname = ["pi"]
+use_xinetd = false
+
+[ports]
+tcp = [2015]
+udp = []

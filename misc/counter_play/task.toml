@@ -1,0 +1,10 @@
+[task]
+name = "Counter Play"
+shortname = "counter"
+hostname = ["counter"]
+use_xinetd = true
+service_name = "counterplay.py"
+
+[ports]
+tcp = [2018]
+udp = []
