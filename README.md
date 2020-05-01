@@ -2,7 +2,7 @@
 
 
 ## Writeups
-See `<category>/<task_name>/<writeup.md>`.
+See `<category>/<task_name>/writeup.md`.
 
 
 ## File Structure
