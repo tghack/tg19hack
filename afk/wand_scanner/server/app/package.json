@@ -14,7 +14,7 @@
   "dependencies": {
     "barcode-scanner": "0.0.1",
     "body-parser": "^1.18.3",
-    "express": "^4.16.4",
+    "express": "^4.17.3",
     "node-pre-gyp": "^0.12.0",
     "sqlite3": "^4.0.6",
     "usb-barcode-scanner": "^1.0.2",
